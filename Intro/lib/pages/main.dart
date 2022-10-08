@@ -39,8 +39,14 @@ class MyPage extends StatelessWidget{
                     const OnBoardingPage()),
                   );
                 },
-                child: const Text('Go to onboarding screen')
+                child: const Text('취향테스트 시작하기')
             ),
+            ElevatedButton(
+                onPressed: () {
+                  
+                },
+                child: const Text('장르별 음식 모아보기')
+            )
           ],
          ),
       ),
