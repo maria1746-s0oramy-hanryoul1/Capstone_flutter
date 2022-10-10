@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'onboarding.dart';
+import 'genre_page.dart';
+import 'test_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget{
     );
   }
 }
+
 
 class MyPage extends StatelessWidget{
   const MyPage({Key? key}) : super(key : key);
@@ -36,14 +39,17 @@ class MyPage extends StatelessWidget{
                 onPressed: (){
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) =>
-                    const OnBoardingPage()),
+                    const TestPage()),
                   );
                 },
                 child: const Text('취향테스트 시작하기')
             ),
             ElevatedButton(
                 onPressed: () {
-                  
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) =>
+                    const GenrePage()),
+                  );
                 },
                 child: const Text('장르별 음식 모아보기')
             )
@@ -53,4 +59,5 @@ class MyPage extends StatelessWidget{
     );
   }
 }
+
 
