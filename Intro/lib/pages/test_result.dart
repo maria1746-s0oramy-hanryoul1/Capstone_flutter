@@ -12,7 +12,8 @@ abstract class ResultPage extends StatelessWidget {
   static Widget makeResultPage (BuildContext currentPage, String txt) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('취향 결과')
+        title: const Text('취향 결과'),
+          backgroundColor: const Color(0xffa40f16),
       ), 
       body: ListView(
         children: [
@@ -20,19 +21,29 @@ abstract class ResultPage extends StatelessWidget {
             padding: const EdgeInsets.only(top:10, left:20, right: 20),
             margin: const EdgeInsets.only(top:150, left: 40, right: 40),
             height: 250,
-            color:Colors.grey[600],
-            child: Center(child: Text(txt)),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(
+                    color: const Color(0xffa40f16),
+                    style: BorderStyle.solid,
+                    width:1
+                )
+            ),
+            child: Center(child: Text(
+            txt,
+            style: const TextStyle(fontSize: 20, color: Colors.black),)),
           ), 
           Container(
             padding: const EdgeInsets.only(top:10, left:20, right:20),
             margin: const EdgeInsets.only(top: 30, left: 40, right: 40),
             height: 50,
-            color: Colors.grey[500],
             child: Center(
-              child: ElevatedButton(onPressed: () {
-                Navigator.push(
-                  currentPage,
-                  MaterialPageRoute(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xffa40f16)
+                ),
+                onPressed: () {
+                  Navigator.push(currentPage, MaterialPageRoute(
                       builder: (currentPage) => MyPage()
                   ),
                 );

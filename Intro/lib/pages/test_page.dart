@@ -11,6 +11,7 @@ class TestPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('일식 취향 테스트'),
+        backgroundColor: const Color(0xffa40f16),
       ),
       body: ListView(
         children: [
@@ -18,33 +19,45 @@ class TestPage extends StatelessWidget {
             padding: const EdgeInsets.only(top:10, left:20, right: 20),
             margin: const EdgeInsets.only(top:150, left: 40, right: 40),
             height: 250,
-            color:Colors.grey[600],
-            child: const Center(child: Text('테스트 전 설명 \n 일식 취향 테스트 시작~!')),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(
+                color: const Color(0xffa40f16),
+                style: BorderStyle.solid,
+                width:1
+              )
+            ),
+            child: const Center(child: Text(
+                '내 취향에 맞는 일식은 무엇일까요?\n시작하기를 눌러 테스트를 진행해보세요.',
+            style: TextStyle(fontSize: 20, color: Colors.black),)),
           ),
           Container(
             padding: const EdgeInsets.only(top:10, left:20, right:20),
             margin: const EdgeInsets.only(top: 30, left: 40, right: 40),
             height: 50,
-            color: Colors.grey[500],
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => OnBoardingPage()
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xffa40f16)
                     ),
+                    onPressed: (){ Navigator.push( context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyPage()
+                      ),
                   );
                 }, child: const Text('뒤로가기')),
-                ElevatedButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Qa_1()
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xffa40f16)
                     ),
-                  );
-                }, child: const Text('시작하기')),
+                    onPressed: (){ Navigator.push( context,
+                      MaterialPageRoute(
+                          builder: (context) => Qa_1()
+                      ),
+                    );
+                      }, child: const Text('시작하기')),
               ],
             )
           ),
@@ -57,7 +70,8 @@ class TestPage extends StatelessWidget {
       Widget nextPage_1, Widget nextPage_2) {
     return Scaffold(
       appBar: AppBar(
-        title : const Text('일식 취향 테스트')
+        title : const Text('일식 취향 테스트'),
+          backgroundColor: const Color(0xffa40f16),
       ),
       body: ListView(
         children: [
@@ -65,31 +79,44 @@ class TestPage extends StatelessWidget {
             padding: const EdgeInsets.only(top:10, left:20, right: 20),
             margin: const EdgeInsets.only(top:150, left: 40, right: 40),
             height: 250,
-            color:Colors.grey[600],
-            child: Center(child: Text(q_txt)
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(
+                    color: const Color(0xffa40f16),
+                    style: BorderStyle.solid,
+                    width:1
+                )
+            ),
+            child: Center(child: Text(
+              q_txt,
+              style: const TextStyle(fontSize: 20, color:Colors.black),
+            )
             ),
           ),
           Container(
               padding: const EdgeInsets.only(top:10, left:20, right:20),
               margin: const EdgeInsets.only(top: 30, left: 40, right: 40),
               height: 50,
-              color: Colors.grey[500],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(
-                      currentPage,
-                      MaterialPageRoute(
-                          builder: (currentPage) => nextPage_1
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xffa40f16)
                       ),
-                    );
-                  }, child: const Text('YES')),
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(
-                      currentPage,
-                      MaterialPageRoute(
-                          builder: (currentPage) => nextPage_2
+                      onPressed: (){
+                        Navigator.push(currentPage, MaterialPageRoute(
+                              builder: (currentPage) => nextPage_1
+                          ),
+                        );
+                        }, child: const Text('YES')),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xffa40f16)
+                      ),
+                      onPressed: (){
+                        Navigator.push( currentPage, MaterialPageRoute(
+                              builder: (currentPage) => nextPage_2
                       ),
                     );
                   }, child: const Text('NO')),
