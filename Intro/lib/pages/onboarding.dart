@@ -10,7 +10,7 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: 'UMA UMA\nうまうま',
+          title: "UMA UMA\nうまうま",
           body: '우마우마에 오신 것을 환영합니다',
           image: Image.asset('image/logo.png'),
           decoration: getPageDecoration()
@@ -28,7 +28,8 @@ class OnBoardingPage extends StatelessWidget {
             decoration: getPageDecoration()
         ),
       ],
-      done: const Text('done'),
+      done: const Text('done',
+      style: TextStyle(fontFamily: "NanumSquare"),),
       onDone: (){
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const MyPage()),
@@ -36,7 +37,8 @@ class OnBoardingPage extends StatelessWidget {
       },
       next: const Icon(Icons.arrow_forward),
       showSkipButton: true,
-      skip: const Text('skip'),
+      skip: const Text('skip',
+      style: TextStyle(fontFamily: "NanumSquare"),),
       dotsDecorator: DotsDecorator(
         color: Colors.cyan,
         size: const Size(10, 10),
@@ -50,13 +52,16 @@ class OnBoardingPage extends StatelessWidget {
     );
   }
   PageDecoration getPageDecoration(){
-    return PageDecoration(
+    return const PageDecoration(
       titleTextStyle: TextStyle(
-        fontSize: 60,
+        fontFamily: "NanumSquare",
+        fontSize: 50,
         fontWeight: FontWeight.bold,
         color: Colors.white
       ),
       bodyTextStyle: TextStyle(
+        fontFamily: "NanumSquare",
+        height: 1.8,
         fontSize: 22,
         color: Colors.white70
       ),

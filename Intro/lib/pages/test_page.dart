@@ -105,6 +105,7 @@ class TestPage extends StatelessWidget {
                           backgroundColor: const Color(0xffa40f16)
                       ),
                       onPressed: (){
+                        Navigator.pop(currentPage);
                         Navigator.push(currentPage, MaterialPageRoute(
                               builder: (currentPage) => nextPage_1
                           ),
@@ -238,7 +239,7 @@ class Qd_4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget qd_4 = TestPage.buildListView(
-        '퓨전 음식을 좋아한다', context, R_soulMates(), R_explorer()
+        '퓨전 음식을 좋아한다', context, R_soulmates(), R_explorer()
     );
     return qd_4;
   }
