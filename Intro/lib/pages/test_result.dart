@@ -1,9 +1,5 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'package:intro/pages/onboarding.dart';
 import 'main.dart';
-import 'test_page.dart';
 import 'food_info.dart';
 
 abstract class ResultPage extends StatelessWidget {
@@ -49,7 +45,7 @@ abstract class ResultPage extends StatelessWidget {
             Text(resultTxt, style: const TextStyle(
               color:Colors.black, fontSize: 20,
               fontWeight: FontWeight.bold,
-              fontFamily: "NotoSans",
+              fontFamily: "NanumSquare",
             ),),
             const SizedBox(height: 20.0),
             const Divider(thickness: 2, height: 1,
@@ -59,7 +55,7 @@ abstract class ResultPage extends StatelessWidget {
             Text(resultDetails,//description of the result
               style: const TextStyle(
               color:Colors.black, fontSize: 15,
-              fontFamily: "NotoSans", height: 1.8),
+              fontFamily: "NanumSquare", height: 1.8),
             textAlign: TextAlign.center,),
             const SizedBox(height: 25.0,)
           ]
@@ -67,7 +63,7 @@ abstract class ResultPage extends StatelessWidget {
     );
   }
   static Widget makeFoodsContainer(Row firstRow, Row secondRow, Row thirdRow) {
-    var lineSpace = 23.0;
+    var lineSpace = 29.0;
     return Container(
         padding: const EdgeInsets.only(top: 30, left:10, right:10, bottom: 15),
         margin: const EdgeInsets.only(top: 10, left:30, right: 30, bottom: 30),
@@ -77,7 +73,7 @@ abstract class ResultPage extends StatelessWidget {
             const Text('추천 음식',
               style: TextStyle(color: Colors.black,
               fontSize: 18, fontWeight: FontWeight.bold,
-              fontFamily: "NotoSans"),),
+              fontFamily: "NanumSquare"),),
             SizedBox(height: lineSpace), firstRow,
             SizedBox(height: lineSpace), secondRow,
             SizedBox(height: lineSpace), thirdRow,
@@ -111,13 +107,14 @@ abstract class ResultPage extends StatelessWidget {
         const SizedBox(height: 10.0),
         Text(foodName, style: const TextStyle(
           color:Colors.black,
-          fontFamily: 'NotoSans',
+          fontFamily: 'NanumSquare',
           fontWeight: FontWeight.bold
         ),
             textAlign: TextAlign.center),
+        const SizedBox(height: 6.0,),
         Text(foodDescription, style: const TextStyle(
           color:Color(0xff5a5a5a),
-          fontFamily: 'NotoSans',
+          fontFamily: 'NanumSquare',
         ),
         textAlign: TextAlign.center,)
       ],
@@ -183,7 +180,7 @@ class R_explorer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ResultPage.FoodsWithText(
-            'image/Food_tantanmen.jpeg', '탄탄멘','땅콩기름 베이스의 중국식 비빔국수에\n스프를 넣은 요',
+            'image/Food_tantanmen.jpeg', '탄탄멘','땅콩기름 베이스의 중국식 비빔국수에\n스프를 넣은 요리',
             context, const Info_Tantanmen()),
         ResultPage.FoodsWithText(
             'image/Food_ramen.jpeg', '라멘','중화면을 사용한 일본의 국민 면요리',
