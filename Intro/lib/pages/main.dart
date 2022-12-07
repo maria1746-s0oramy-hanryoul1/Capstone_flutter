@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intro/pages/food_info.dart';
 // import 'package:intro/pages/foodAppTestPage.dart';
 import 'package:intro/pages/view_all_results.dart';
 import 'package:flutter/services.dart';
